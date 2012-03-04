@@ -51,10 +51,9 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/discovery/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/discovery/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/discovery/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/discovery/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+    vendor/discovery/prebuilt/common/addon.d/50-base.sh:system/addon.d/50-base.sh \
+    vendor/discovery/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/discovery/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions
 
 # Include LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/discovery/overlay/dictionaries
