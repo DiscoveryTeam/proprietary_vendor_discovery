@@ -80,10 +80,14 @@ PRODUCT_COPY_FILES +=  \
 #    vendor/discovery/prebuilt/common/etc/UPDATE-SuperSU-2.52.zip:system/addon.d/UPDATE-SuperSU.zip \
 #    vendor/discovery/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 #else
-PRODUCT_COPY_FILES += \
-   vendor/discovery/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-   vendor/discovery/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+#PRODUCT_COPY_FILES += \
+#   vendor/discovery/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+#   vendor/discovery/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 #endif
+
+# prebuilt su binary script support
+PRODUCT_COPY_FILES += \
+    vendor/discovery/prebuilt/common/xbin/su:system/xbin/su
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -197,3 +201,6 @@ PRODUCT_PACKAGES += \
 
 # Jack server heap size
 export ANDROID_JACK_VM_ARGS += "-Xmx4096m"
+
+## Don't compile SystemUITests
+EXCLUDE_SYSTEMUI_TESTS := true
