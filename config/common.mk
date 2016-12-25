@@ -187,3 +187,6 @@ EXTENDED_POST_PROCESS_PROPS := vendor/discovery/tools/discovery_process_props.py
 
 # Branding
 include vendor/discovery/config/branding.mk
+
+# Google sounds
+include vendor/discovery/google/GoogleAudio.mk

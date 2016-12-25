@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := vendor/du/google
+LOCAL_PATH := vendor/discovery/google
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/alarms/Argon.ogg:system/media/audio/alarms/Argon.ogg \
@@ -98,3 +98,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ringtones/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
     $(LOCAL_PATH)/ringtones/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg \
     $(LOCAL_PATH)/ringtones/Zen.ogg:system/media/audio/ringtones/Zen.ogg
+
+PRODUCT_PROPERTY_OVERRIDES := \
+   ro.config.ringtone=Zen.ogg \
+   ro.config.notification_sound=Chime.ogg
