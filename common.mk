@@ -214,6 +214,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     MagiskManager
 
+# SnapDragon Browser
+PRODUCT_PACKAGES += \
+    SnapBrowser
+
 # Copy Magisk zip
 PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/magisk.zip:system/addon.d/magisk.zip
