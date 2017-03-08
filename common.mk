@@ -123,7 +123,7 @@ PRODUCT_PACKAGES += \
     oprofiled \
     sqlite3 \
     strace \
-    masquerade \
+    ThemeInterfacer \
     Terminal
 
 # Stagefright FFMPEG plugin
