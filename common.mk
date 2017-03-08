@@ -80,9 +80,9 @@ PRODUCT_COPY_FILES +=  \
 #    vendor/discovery/prebuilt/common/etc/UPDATE-SuperSU-2.52.zip:system/addon.d/UPDATE-SuperSU.zip \
 #    vendor/discovery/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 #else
-PRODUCT_COPY_FILES += \
-   vendor/discovery/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-   vendor/discovery/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+#PRODUCT_COPY_FILES += \
+#   vendor/discovery/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+#   vendor/discovery/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 #endif
 
 # Enable SIP+VoIP on all targets
@@ -192,8 +192,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Build Masquerade from sources and Substratum app from prebuilt
 PRODUCT_PACKAGES += \
-    masquerade \
     Substratum
+
+# Magisk Manager
+PRODUCT_PACKAGES += \
+    MagiskManager
+
+# Copy Magisk zip
+PRODUCT_COPY_FILES += \
+    vendor/discovery/prebuilt/common/magisk.zip:system/addon.d/magisk.zip
 
 # Jack server heap size
 export ANDROID_JACK_VM_ARGS += "-Xmx4096m"
