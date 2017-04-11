@@ -119,7 +119,8 @@ PRODUCT_PACKAGES += \
     sqlite3 \
     strace \
     ThemeInterfacer \
-    Terminal
+    Terminal \
+    Turbo
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
