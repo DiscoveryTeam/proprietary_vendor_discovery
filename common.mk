@@ -45,8 +45,15 @@ ifeq ($(TARGET_BOOTANIMATION_480P),true)
 PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/media/bootanimation-480p.zip:system/media/bootanimation.zip
 else
+# Add Discovery bootanimation based on device resolution
+ifneq ($(filter discovery_gemini discovery_z2_plus discovery_kenzo discovery_oneplus2 discovery_oneplus3 discovery_mido,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/media/bootanimation-x800.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter discovery_d855 discovery_mako,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+    vendor/discovery/prebuilt/common/media/bootanimation-x600.zip:system/media/bootanimation.zip
+endif
 endif
 
 # Backup Tool
