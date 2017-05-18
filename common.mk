@@ -50,7 +50,7 @@ ifneq ($(filter discovery_gemini discovery_z2_plus discovery_kenzo discovery_one
 PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/media/bootanimation-x800.zip:system/media/bootanimation.zip
 endif
-ifneq ($(filter discovery_d855 discovery_mako,$(TARGET_PRODUCT)),)
+ifneq ($(filter discovery_d855 discovery_mako discovery_i9300,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/media/bootanimation-x600.zip:system/media/bootanimation.zip
 endif
