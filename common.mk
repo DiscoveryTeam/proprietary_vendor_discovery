@@ -160,8 +160,13 @@ PRODUCT_PACKAGES += \
     SoundRecorder
 
 # World APN list
+ifneq ($(filter discovery_z2_plus,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+    vendor/discovery/prebuilt/common/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+else
 PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+endif
 
 # Selective SPN list for operator number who has the problem.
 PRODUCT_COPY_FILES += \
