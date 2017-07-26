@@ -220,3 +220,6 @@ PRODUCT_COPY_FILES += \
 
 # Jack server heap size
 export ANDROID_JACK_VM_ARGS += "-Xmx4096m"
+
+# DiscoveryOTA
+$(call inherit-product-if-exists, vendor/discovery/config/ota.mk)
