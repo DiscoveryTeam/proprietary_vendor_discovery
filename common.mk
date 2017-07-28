@@ -200,7 +200,8 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 PRODUCT_PACKAGES += \
 	messaging \
 	LiveWallpapers \
-	LiveWallpapersPicker
+	LiveWallpapersPicker \
+	WallpaperPickerGoogle
 
 # Include OMS (Substratum)
 PRODUCT_PROPERTY_OVERRIDES += \
