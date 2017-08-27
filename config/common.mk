@@ -173,19 +173,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/discovery/overlay/common
 # Bootanimation
 PRODUCT_COPY_FILES += vendor/discovery/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
 
-#ROM VERSION INFO
-ROM_BUILDTYPE := RC1
-ROM_VERSION := D1
-PRODUCT_DEVICE := $(TARGET_VENDOR_DEVICE_NAME)
-DISCOVERY_VERSION := $(ROM_BUILDTYPE)-$(ROM_VERSION)
-
-# Apply it to build.prop
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.discovery.version=$(ROM_VERSION) \
-    ro.modversion=$(ROM_BUILDTYPE) \
-    ro.discovery.date=$(shell date -u +%Y-%m-%d)
-
-CUSTOM_VERSION := discovery_$(PRODUCT_DEVICE)_$(ROM_BUILDTYPE)-$(ROM_VERSION)_$(PLATFORM_VERSION)_$(shell date +%Y-%m-%d)
-
 EXTENDED_POST_PROCESS_PROPS := vendor/discovery/tools/discovery_process_props.py
 
+# Branding
+include vendor/discovery/config/branding.mk
