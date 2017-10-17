@@ -34,6 +34,11 @@ PRODUCT_COPY_FILES += \
     vendor/discovery/prebuilt/common/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
     vendor/discovery/prebuilt/common/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
 
+# Charging sounds
+PRODUCT_COPY_FILES += \
+    vendor/discovery/google/effects/BatteryPlugged.ogg:system/media/audio/ui/BatteryPlugged.ogg \
+    vendor/discovery/google/effects/BatteryPlugged_48k.ogg:system/media/audio/ui/BatteryPlugged_48k.ogg
+
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
     vendor/discovery/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
