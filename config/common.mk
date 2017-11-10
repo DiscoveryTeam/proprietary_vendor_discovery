@@ -18,11 +18,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
-# Backup tool
+# Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/discovery/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/discovery/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/discovery/prebuilt/common/bin/50-discovery.sh:system/addon.d/50-discovery.sh
+    vendor/discovery/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/discovery/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/discovery/tools/50-discovery.sh:system/addon.d/50-discovery.sh
 
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
