@@ -75,7 +75,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
-    PhaseBeam
+    PhaseBeam \
+    Turbo \
+    ViaBrowser \
+    WallpaperPickerGoogle
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
