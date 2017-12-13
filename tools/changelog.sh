@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Exports
-
-. $ANDROID_BUILD_TOP/vendor/discovery/tools/colors
-
 export Changelog=Changelog.txt
 
 if [ -f $Changelog ];
@@ -13,19 +9,18 @@ fi
 
 touch $Changelog
 
-# Print something to build output
-echo ${bldppl}"Generating changelog..."${txtrst}
+echo "Generating changelog..."
 
-for i in $(seq 5);
+for i in $(seq 14);
 do
 export After_Date=`date --date="$i days ago" +%m-%d-%Y`
 k=$(expr $i - 1)
 	export Until_Date=`date --date="$k days ago" +%m-%d-%Y`
 
 	# Line with after --- until was too long for a small ListView
-	echo '====================' >> $Changelog;
+	echo '=======================' >> $Changelog;
 	echo  "     "$Until_Date       >> $Changelog;
-	echo '===================='	>> $Changelog;
+	echo '=======================' >> $Changelog;
 	echo >> $Changelog;
 
 	# Cycle through every repo to find commits between 2 dates
@@ -36,4 +31,4 @@ done
 sed -i 's/project/   */g' $Changelog
 
 cp $Changelog $OUT/system/etc/
-rm $Changelog
+cp $Changelog $OUT/
