@@ -24,6 +24,15 @@ PRODUCT_COPY_FILES += \
     vendor/discovery/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/discovery/tools/50-discovery.sh:system/addon.d/50-discovery.sh
 
+# Fonts
+PRODUCT_COPY_FILES += \
+    vendor/discovery/prebuilt/common/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
+    vendor/discovery/prebuilt/common/fonts/GoogleSans-Medium.ttf:system/fonts/GoogleSans-Medium.ttf \
+    vendor/discovery/prebuilt/common/fonts/GoogleSans-MediumItalic.ttf:system/fonts/GoogleSans-MediumItalic.ttf \
+    vendor/discovery/prebuilt/common/fonts/GoogleSans-Italic.ttf:system/fonts/GoogleSans-Italic.ttf \
+    vendor/discovery/prebuilt/common/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
+    vendor/discovery/prebuilt/common/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
+
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
     vendor/discovery/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
