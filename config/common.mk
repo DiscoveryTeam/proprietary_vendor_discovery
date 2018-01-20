@@ -9,7 +9,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    keyguard.no_require_sim=true
+    keyguard.no_require_sim=true \
+    ro.com.android.mobiledata=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
