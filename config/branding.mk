@@ -7,7 +7,7 @@ DISCOVERY_VERSION := $(ROM_BUILDTYPE)-$(ROM_VERSION)
 CUSTOM_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
 CUSTOM_VERSION := discovery_rom_$(ROM_BUILDTYPE)_$(ROM_VERSION)_$(PRODUCT_DEVICE)_$(PLATFORM_VERSION)_$(shell date +%Y-%m-%d)
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.discovery.buildtype=$(ROM_BUILDTYPE) \
     ro.discovery.version=$(ROM_VERSION) \
