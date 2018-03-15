@@ -13,4 +13,5 @@ PRODUCT_GENERIC_PROPERTIES += \
     ro.discovery.version=$(ROM_VERSION) \
     ro.discovery.date=$(shell date -u +%Y-%m-%d) \
     ro.mod.version=$(CUSTOM_VERSION) \
-    ro.mod.build_date=$(CUSTOM_BUILD_DATE)
+    ro.mod.build_date=$(CUSTOM_BUILD_DATE) \
+    ro.discovery.display.version=$(DISCOVERY_VERSION)
