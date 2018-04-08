@@ -195,7 +195,3 @@ include vendor/discovery/config/branding.mk
 
 # Google sounds
 include vendor/discovery/google/GoogleAudio.mk
-
-# Substratum
-PRODUCT_PACKAGES += SubstratumService
-PRODUCT_SYSTEM_SERVER_APPS += SubstratumService
