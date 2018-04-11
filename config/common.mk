@@ -89,6 +89,7 @@ PRODUCT_PACKAGES += \
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \
+    CustomizedPixelLauncher \
     LiveWallpapersPicker \
     PhaseBeam \
     Turbo \
