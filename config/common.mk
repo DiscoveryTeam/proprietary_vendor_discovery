@@ -1,23 +1,6 @@
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
-PRODUCT_GENERIC_PROPERTIES += \
-    ro.com.google.clientidbase=android-google
-else
-PRODUCT_GENERIC_PROPERTIES += \
-    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
-endif
-
-PRODUCT_GENERIC_PROPERTIES += \
-    keyguard.no_require_sim=true \
-    ro.com.android.mobiledata=false
-
-PRODUCT_GENERIC_PROPERTIES += \
-    ro.build.selinux=1
-
-# Disable excessive dalvik debug messages
-PRODUCT_GENERIC_PROPERTIES += \
-    dalvik.vm.debug.alloc=0
+$(call inherit-product, vendor/discovery/config/discovery_props.mk)
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -172,14 +155,6 @@ PRODUCT_PACKAGES += \
     libffmpeg_extractor \
     libffmpeg_omx \
     media_codecs_ffmpeg.xml
-
-PRODUCT_GENERIC_PROPERTIES += \
-    media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so
-
-# Storage manager
-PRODUCT_GENERIC_PROPERTIES += \
-    ro.storage_manager.enabled=true
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
