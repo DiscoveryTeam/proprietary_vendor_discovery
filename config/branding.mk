@@ -9,6 +9,7 @@ CUSTOM_VERSION := discovery_rom_$(ROM_BUILDTYPE)_$(ROM_VERSION)_$(PRODUCT_DEVICE
 
 PRODUCT_GENERIC_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
+    ro.product.maintainer=$(DEVICE_MAINTAINER) \
     ro.discovery.buildtype=$(ROM_BUILDTYPE) \
     ro.discovery.version=$(ROM_VERSION) \
     ro.discovery.date=$(shell date -u +%Y-%m-%d) \
