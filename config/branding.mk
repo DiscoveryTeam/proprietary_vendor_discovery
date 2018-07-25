@@ -9,7 +9,15 @@ DEVICE_MAINTAINER := Unofficial
 endif
 
 CUSTOM_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
-CUSTOM_VERSION := discovery_rom_$(ROM_BUILDTYPE)_$(ROM_VERSION)_$(PRODUCT_DEVICE)_$(PLATFORM_VERSION)_$(shell date +%Y-%m-%d)
+
+ifdef DISCOVERY_OFFICIAL
+    ifeq ($(DISCOVERY_OFFICIAL), true)
+        CUSTOM_VERSION := discovery_rom_$(ROM_BUILDTYPE)_$(ROM_VERSION)_$(PRODUCT_DEVICE)_$(PLATFORM_VERSION)_$(shell date +%Y-%m-%d)
+    endif
+else
+    CUSTOM_VERSION := UNOFFICIAL-discovery_rom_$(ROM_BUILDTYPE)_$(ROM_VERSION)_$(PRODUCT_DEVICE)_$(PLATFORM_VERSION)_$(shell date +%Y-%m-%d)
+    DEVICE_MAINTAINER := Unofficial
+endif
 
 PRODUCT_GENERIC_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
