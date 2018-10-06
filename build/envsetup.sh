@@ -68,7 +68,7 @@ function breakfast()
     local variant=$2
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/aosp/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/discovery/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
@@ -89,7 +89,7 @@ function breakfast()
                 variant="userdebug"
             fi
 
-            lunch aosp_$target-$variant
+            lunch $target-$variant
         fi
     fi
     return $?
@@ -906,7 +906,7 @@ if [ -d $(gettop)/prebuilts/snapdragon-llvm/toolchains ]; then
             export SDCLANG=true
             export SDCLANG_PATH=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_4.0/prebuilt/linux-x86_64/bin
             export SDCLANG_PATH_2=$(gettop)/prebuilts/snapdragon-llvm/toolchains/llvm-Snapdragon_LLVM_for_Android_4.0/prebuilt/linux-x86_64/bin
-            export SDCLANG_LTO_DEFS=$(gettop)/vendor/aosp/build/core/sdllvm-lto-defs.mk
+            export SDCLANG_LTO_DEFS=$(gettop)/vendor/discovery/build/core/sdllvm-lto-defs.mk
             ;;
     esac
 fi

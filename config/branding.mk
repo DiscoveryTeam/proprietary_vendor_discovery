@@ -1,20 +1,30 @@
-# Set all versions
-CUSTOM_BUILD_TYPE ?= UNOFFICIAL
-CUSTOM_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
-CUSTOM_PLATFORM_VERSION := 9.0
+#ROM VERSION INFO
+ROM_BUILDTYPE := Beta1
+ROM_VERSION := D1
+PRODUCT_DEVICE := $(TARGET_VENDOR_DEVICE_NAME)
+DISCOVERY_VERSION := $(ROM_BUILDTYPE)-$(ROM_VERSION)
 
-TARGET_PRODUCT_SHORT := $(subst aosp_,,$(CUSTOM_BUILD))
-
-ifeq ($(IS_GO_VERSION), true)
-CUSTOM_VERSION := PixelExperience_go_$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
-ROM_FINGERPRINT := PixelExperience_go/$(CUSTOM_PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(CUSTOM_BUILD_DATE)
-else
-CUSTOM_VERSION := PixelExperience_$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
-ROM_FINGERPRINT := PixelExperience/$(CUSTOM_PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(CUSTOM_BUILD_DATE)
+ifndef DEVICE_MAINTAINER
+DEVICE_MAINTAINER := Unofficial
 endif
 
-CUSTOM_PROPERTIES := \
-    org.pixelexperience.version=$(CUSTOM_VERSION) \
-    org.pixelexperience.build_date=$(CUSTOM_BUILD_DATE) \
-    org.pixelexperience.build_type=$(CUSTOM_BUILD_TYPE) \
-    org.pixelexperience.fingerprint=$(ROM_FINGERPRINT)
+CUSTOM_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
+
+ifdef DISCOVERY_OFFICIAL
+    ifeq ($(DISCOVERY_OFFICIAL), true)
+        CUSTOM_VERSION := discovery_rom_$(ROM_BUILDTYPE)_$(ROM_VERSION)_$(PRODUCT_DEVICE)_$(PLATFORM_VERSION)_$(shell date +%Y-%m-%d)
+    endif
+else
+    CUSTOM_VERSION := UNOFFICIAL-discovery_rom_$(ROM_BUILDTYPE)_$(ROM_VERSION)_$(PRODUCT_DEVICE)_$(PLATFORM_VERSION)_$(shell date +%Y-%m-%d)
+    DEVICE_MAINTAINER := Unofficial
+endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    BUILD_DISPLAY_ID=$(BUILD_ID) \
+    ro.product.maintainer=$(DEVICE_MAINTAINER) \
+    ro.discovery.buildtype=$(ROM_BUILDTYPE) \
+    ro.discovery.version=$(ROM_VERSION) \
+    ro.discovery.date=$(shell date -u +%Y-%m-%d) \
+    ro.mod.version=$(CUSTOM_VERSION) \
+    ro.mod.build_date=$(CUSTOM_BUILD_DATE) \
+    ro.discovery.display.version=$(DISCOVERY_VERSION)
