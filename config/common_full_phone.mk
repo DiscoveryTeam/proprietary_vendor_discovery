@@ -4,7 +4,7 @@ IS_PHONE := true
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/discovery/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Telephony packages
 PRODUCT_PACKAGES += \
@@ -20,5 +20,5 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.config.ringtone=The_big_adventure.ogg
 
-# Inherit full common PixelExperience stuff
-$(call inherit-product, vendor/aosp/config/common_full.mk)
+# Inherit full common Discovery stuff
+$(call inherit-product, vendor/discovery/config/common_full.mk)
